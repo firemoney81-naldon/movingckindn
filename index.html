@@ -1,23 +1,291 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+  
+    <style>
+        /* 기존 딱딱한 레이아웃을 벗어나 부드럽고 다채로운 색감 적용 */
+        body { font-family: 'Malgun Gothic', 'Dotum', sans-serif; line-height: 1.7; color: #444; margin: 0; padding: 0; background-color: #f7f9fc; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 30px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+        header { background-color: #00695c; color: #fff; padding: 25px 0; text-align: center; border-radius: 12px 12px 0 0; }
+        header h1 { color: #fff; text-decoration: none; font-size: 2.2em; font-weight: 700; margin: 0; }
+        /* 네비게이션 색상 변경 */
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: space-around; background-color: #e0f2f1; border-radius: 0 0 12px 12px; }
+        nav ul li a { display: block; padding: 12px 15px; text-decoration: none; color: #004d40; font-weight: bold; transition: background-color 0.3s; }
+        nav ul li a:hover { background-color: #b2dfdb; color: #004d40; border-radius: 8px; }
+
+        .content-wrap { display: flex; gap: 30px; margin-top: 30px; }
+        .sidebar { flex: 1; min-width: 250px; padding: 20px; background-color: #f1f8e9; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); align-self: flex-start; /* 스티키 사이드바 효과를 위해 */ }
+        .main-content { flex: 3; }
+        
+        /* 제목 스타일 변경 (명확한 시각적 계층 구조) */
+        h2 { border-left: 5px solid #00695c; padding-left: 15px; color: #00695c; font-size: 1.8em; margin-top: 40px; padding-bottom: 5px; border-bottom: 1px solid #e0e0e0; }
+        h3 { color: #2e7d32; font-size: 1.4em; margin-top: 30px; border-bottom: 2px dashed #c8e6c9; padding-bottom: 5px; }
+        h4 { color: #555; margin-top: 20px; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px; font-weight: bold; }
+        
+        /* 강조 및 정보성 박스 디자인 */
+        .highlight { background-color: #e8f5e9; padding: 20px; border-radius: 10px; border: 2px solid #a5d6a7; margin: 25px 0; font-size: 1.1em; }
+        .highlight strong { color: #00695c; }
+        
+        /* 표 디자인 */
+        table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 20px 0; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; }
+        table th, table td { padding: 15px; text-align: center; border-bottom: 1px solid #eee; }
+        table th { background-color: #f9fbe7; color: #004d40; font-weight: bold; border-right: 1px solid #ddd; }
+        table td { background-color: #fff; border-right: 1px solid #f0f0f0; }
+        table tr:last-child td { border-bottom: none; }
+        
+        /* 입력란 스타일 (체류 시간 증대) */
+        .interactive-section { background-color: #f3e5f5; padding: 30px; border-radius: 10px; margin: 40px 0; border: 1px solid #ce93d8; }
+        .interactive-section h3 { color: #6a1b9a; border-bottom: 2px solid #e1bee7; }
+        .input-group { margin-bottom: 15px; display: flex; flex-direction: column; }
+        .input-group label { margin-bottom: 5px; font-weight: 600; color: #4a148c; }
+        .input-group input[type="text"], .input-group input[type="number"], .input-group select { padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; }
+        .input-group button { background-color: #6a1b9a; color: white; padding: 12px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; margin-top: 10px; transition: background-color 0.3s; }
+        .input-group button:hover { background-color: #4a148c; }
+        
+        /* 외부 링크 섹션 스타일 */
+        .external-links { margin-top: 40px; padding: 20px; background-color: #e3f2fd; border-radius: 10px; border-left: 5px solid #2196f3; }
+        .external-links a { color: #1565c0; text-decoration: none; font-weight: 500; display: block; margin-bottom: 8px; }
+        .external-links a:hover { text-decoration: underline; color: #0d47a1; }
+
+        /* 기타 스타일 */
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        blockquote { border-left: 4px solid #a5d6a7; padding-left: 15px; margin: 20px 0; color: #666; font-style: italic; background-color: #f9f9f9; padding: 15px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>구미이사업체 비교 분석 및 2026년 이사 성공 전략</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav>
+            <ul class="main-menu">
+                <li><a href="#guide">구미 이사 비용 가이드</a></li>
+                <li><a href="#recommend">구미이사업체 추천 기준</a></li>
+                <li><a href="#checklist">이사 준비 체크리스트</a></li>
+                <li><a href="#faq">자주 묻는 질문(FAQ)</a></li>
+            </ul>
+        </nav>
+
+        <div class="content-wrap">
+            <div class="sidebar">
+                <h2>빠른 목차</h2>
+                <ul class="sub-menu">
+                    <li><a href="#cost-factors">이사 비용 결정 요소</a></li>
+                    <li><a href="#types">포장이사, 반포장이사 비교</a></li>
+                    <li><a href="#selection">업체 선정 핵심 노하우</a></li>
+                    <li><a href="#contract">계약 전 필수 확인 사항</a></li>
+                    <li><a href="#related-keywords">연관 키워드 분석</a></li>
+                    <li><a href="#reliability">신뢰도 높은 외부 정보</a></li>
+                </ul>
+                <div class="interactive-section" style="padding: 15px; margin-top: 20px;">
+                    <h3>이사 견적 간편 요청</h3>
+                    <div class="input-group">
+                        <label for="move_type_mini">이사 유형:</label>
+                        <select id="move_type_mini">
+                            <option value="포장이사">포장이사</option>
+                            <option value="반포장이사">반포장이사</option>
+                            <option value="일반이사">일반이사</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="date_mini">희망일:</label>
+                        <input type="text" id="date_mini" placeholder="예: 2026년 3월 15일">
+                    </div>
+                    <button onclick="alert('견적 요청 정보가 접수되었습니다. 곧 전문가가 연락드립니다.')">견적 요청하기</button>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="highlight">
+                    <p><strong>구미이사업체</strong>를 선택하는 것은 성공적인 이사의 첫걸음입니다. 2026년 최신 기준으로, 투명한 **구미이사비용** 산정 방식과 믿을 수 있는 **구미포장이사** 업체를 선정하는 **핵심 가이드**를 제시합니다. 단순한 짐 운반을 넘어, 고객의 소중한 자산을 안전하게 옮기고 새로운 시작을 돕는 **토탈 이사 솔루션**을 지금 바로 확인해보세요.</p>
+                </div>
+
+                <h2 id="guide">💰 구미 이사 비용 가이드 및 2026년 트렌드 분석</h2>
+                
+                <h3 id="cost-factors">이사 비용 결정 요소와 2026년 예상 변동률</h3>
+                <p><strong>구미이사업체</strong>의 비용은 단순히 거리나 짐의 양만으로 결정되지 않습니다. **인건비, 이사 방식(포장이사, 일반이사), 운송 장비(차량 톤수), 작업 환경(층수, 엘리베이터 유무), 특수 작업(에어컨 탈부착, 벽걸이 TV)** 등이 복합적으로 작용합니다. 2026년에는 인건비 및 유가 상승에 따라 전년 대비 약 **5~10%**의 비용 상승이 예상되므로, 미리 여러 **구미이사비용**을 비교하는 것이 중요합니다.</p>
+
+                <h4>이사 방식별 장단점 및 비용 비교</h4>
+                <p>구미 지역에서 가장 많이 이용하는 세 가지 이사 방식의 특징을 비교하고, 대략적인 비용 차이를 이해하는 것이 합리적인 업체 선정의 기초가 됩니다.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>이사 유형</th>
+                            <th>작업 범위</th>
+                            <th>시간 절약</th>
+                            <th>가장 적합한 대상</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**구미포장이사**</td>
+                            <td>포장, 운반, 정리, 청소까지 전담</td>
+                            <td>매우 높음</td>
+                            <td>시간이 없거나 짐이 많은 경우</td>
+                        </tr>
+                        <tr>
+                            <td>**구미반포장이사**</td>
+                            <td>포장, 운반 (정리/풀기 고객 담당)</td>
+                            <td>중간</td>
+                            <td>비용 절감과 직접 정리를 선호하는 경우</td>
+                        </tr>
+                        <tr>
+                            <td>**구미일반이사**</td>
+                            <td>운반만 업체 담당 (포장/정리 고객 담당)</td>
+                            <td>낮음</td>
+                            <td>짐이 적거나 스스로 모든 것을 처리할 수 있는 경우 (원룸 이사)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="highlight">**팁:** **구미반포장이사**는 **구미포장이사** 대비 15~25% 정도 저렴할 수 있으나, 이삿짐 정리에 필요한 노동력과 시간을 반드시 고려해야 합니다.</p>
+
+                <h3 id="types">구미이사비용의 투명성 확보: 견적 산정 노하우</h3>
+                <p>신뢰할 수 있는 **구미이사업체**는 방문 견적을 원칙으로 합니다. 전화나 온라인 견적은 최종 비용과 큰 차이가 발생할 수 있습니다. 방문 견적 시에는 반드시 다음 사항을 확인해야 합니다.</p>
+                <ul>
+                    <li>**추가 비용 항목 명확화:** 사다리차 비용, 특수 물품(피아노, 대형 금고 등) 운반 비용, 이사 당일 예상치 못한 추가 인력 투입 시 비용 등을 서면으로 명시하는지 확인합니다.</li>
+                    <li>**피해 보상 이행 보증:** 이사화물 주선사업 허가증(필수)과 피해보상 이행보증보험 가입 여부를 확인합니다. 이는 업체의 신뢰도를 판단하는 가장 중요한 기준 중 하나입니다.</li>
+                    <li>**계약서 상세 명시:** 계약서에 이사 일시, 출발지/도착지 주소, 차량 톤수, 투입 인원(남/여 구분), 이사 요금 및 결제 조건 등을 상세히 기록해야 합니다.</li>
+                </ul>
+
+                <hr>
+                <h2 id="recommend">✅ 신뢰할 수 있는 구미이사업체 추천 및 선정 기준</h2>
+                <p>수많은 **구미이사업체** 중에서 나의 이사 환경에 가장 적합한 업체를 고르는 것은 까다로운 일입니다. 다음의 핵심 기준을 통해 후회 없는 선택을 하세요.</p>
+
+                <h3 id="selection">업체 선정 핵심 노하우: 후기와 경력 중심</h3>
+                <p>업체의 규모보다는 **구미 지역**에서의 실제 이사 경험과 고객 후기가 훨씬 중요합니다. **김천이사업체**나 **대구이사업체**를 알아볼 때도 마찬가지입니다. 구미 지역의 골목 구조, 아파트 단지의 특성, 주차 환경 등에 대한 이해도가 높은 업체일수록 이사 당일 예상치 못한 문제 발생 확률이 낮습니다.</p>
+                <ul>
+                    <li>**온라인 후기 검토:** 네이버 카페, 블로그, 지역 커뮤니티 등에서 해당 **구미이사업체**의 실제 이용 후기를 꼼꼼히 확인합니다. '친절도', '정리 정돈 수준', '파손 여부', '추가 비용 발생 여부' 등을 중점적으로 봅니다.</li>
+                    <li>**공식 허가 확인:** 관허 이사업체인지 반드시 확인합니다. 이는 최소한의 법적 기준과 책임 능력을 갖추었음을 의미합니다.</li>
+                    <li>**방문 견적 시 전문성 확인:** 견적 담당자가 현장에서 짐의 양, 특수 물품, 동선 등을 정확하게 파악하고 견적을 내는지 확인합니다. 전문성이 부족한 업체는 견적이 부정확하고 이사 당일 문제가 발생하기 쉽습니다.</li>
+                </ul>
+
+                <hr>
+                <div class="interactive-section">
+                    <h3 id="simulation">이사 비용 시뮬레이션 및 맞춤 체크리스트 생성 (2026년 기준)</h3>
+                    <p>아래 정보를 입력하시면, 2026년도 **구미이사비용** 예상 범위와 개인화된 **이사준비체크리스트**를 확인할 수 있습니다. (*실제 비용과 차이가 있을 수 있습니다. 업체 선정 시 반드시 방문 견적을 받으세요*)</p>
+                    
+                    <div class="input-group">
+                        <label for="area_size">이사 평수/짐량 (평/톤):</label>
+                        <input type="number" id="area_size" placeholder="예: 32평 또는 5톤" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="distance">구미 내/외 이동 거리 (Km):</label>
+                        <input type="number" id="distance" placeholder="예: 10 (구미 내 이사) 또는 50 (김천 -> 구미)" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="packing_type">원하는 이사 서비스:</label>
+                        <select id="packing_type">
+                            <option value="포장이사">포장이사 (Full-Service)</option>
+                            <option value="반포장이사">반포장이사 (Semi-Service)</option>
+                            <option value="일반이사">일반이사 (Basic)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="move_month">희망 월 (성수기 여부 판단):</label>
+                        <select id="move_month">
+                            <option value="1">1월 (비수기)</option>
+                            <option value="3">3월 (손 없는 날 주의)</option>
+                            <option value="5">5월 (성수기 시작)</option>
+                            <option value="10">10월 (성수기)</option>
+                        </select>
+                    </div>
+                    
+                    <button onclick="calculateCostAndChecklist()">예상 비용 및 체크리스트 보기</button>
+                    
+                    <div id="result_output" style="margin-top: 20px; padding: 15px; border: 1px dashed #ce93d8; border-radius: 5px; background-color: #ffffff;">
+                        <p>여기에 예상 비용 범위와 맞춤형 체크리스트가 표시됩니다.</p>
+                    </div>
+                </div>
+
+                <hr>
+                <h2 id="checklist">📋 이사 전 반드시 확인해야 할 필수 준비 체크리스트</h2>
+
+                <h3 id="contract">이사 계약 전 필수 확인 사항: 이사화물 배상 책임</h3>
+                <p>계약서에 파손, 분실 등 이사 사고 발생 시 **배상 책임 범위**가 명확하게 기재되어 있는지 확인해야 합니다. 특히 고가품이나 귀중품에 대한 보상 규정을 사전에 논의하고 문서화하는 것이 중요합니다. 책임 보험 가입 여부와 보상 한도액은 반드시 확인해야 할 사항입니다.</p>
+
+                <h4>이사 2주 전부터 당일까지의 상세 일정 관리</h4>
+                <ul class="article-list">
+                    <li>**이사 2주 전:** **구미이사업체** 최종 선정 및 계약, 이사할 집의 가구 배치 계획 수립, 불필요한 짐 정리 및 폐가전/가구 처리 예약 (구미시 폐기물 처리 센터 확인).</li>
+                    <li>**이사 1주 전:** 우편물 주소지 변경 신청(KTX, 은행, 통신사 등), 전학 수속(자녀가 있는 경우), 냉장고 및 세탁기 물 빼기 준비.</li>
+                    <li>**이사 당일:** 귀중품은 직접 운반, 이사 전후 파손 여부 확인 및 사진 촬영, 잔금 정산 시 추가 비용 발생 여부 확인 후 지불.</li>
+                </ul>
+
+                <blockquote>
+                    <p>이사 후 3개월 이내에 발견된 파손이나 분실에 대해서는 배상을 요구할 수 있습니다. 단, 이사 당일 확인서에 서명하기 전에 꼼꼼히 검토해야 합니다.</p>
+                </blockquote>
+
+                <hr>
+                <h2 id="related-keywords">🔍 구미이사업체 관련 자동완성 및 연관 키워드 심층 분석</h2>
+                <p><strong>구미이사업체</strong>를 검색하는 사용자들이 함께 찾는 **구미포장이사**, **김천이사업체**, **구미원룸이사**, **구미이사청소** 등의 키워드는 이사 서비스의 범위를 넓혀줍니다. 이를 통해 사용자들은 이사 과정 전체에 대한 정보를 얻고자 합니다.</p>
+                <p>특히 **구미원룸이사**를 찾는 1인 가구는 비용 절감을 위해 **용달이사**나 **반포장이사**를 선호하는 경향이 있으며, 이러한 맞춤형 서비스 제공 여부도 업체 선정의 중요한 기준이 됩니다.</p>
+
+                <hr>
+                <div class="external-links">
+                    <h2 id="reliability">🔗 이사 관련 공인된 신뢰성 있는 외부 사이트</h2>
+                    <p>이사 관련 법규, 소비자 보호, 지역 정보 등 신뢰도 높은 외부 기관의 정보를 통해 이사의 전문성과 안전성을 높이세요.</p>
+                    <ul>
+                        <li><a href="https://www.law.go.kr/" target="_blank" rel="nofollow noopener">법제처: 이사화물 운송 관련 법규 및 규정 확인</a></li>
+                        <li><a href="https://www.kca.go.kr/main.do" target="_blank" rel="nofollow noopener">한국소비자원: 이사 서비스 소비자 피해 구제 정보</a></li>
+                        <li><a href="https://www.gumi.go.kr/main.do" target="_blank" rel="nofollow noopener">구미시청 공식 홈페이지: 지역 생활 정보 및 행정 서비스</a></li>
+                        <li><a href="https://namu.wiki/w/%ED%8F%AC%EC%9E%A5%EC%9D%B4%EC%82%AC" target="_blank" rel="nofollow noopener">나무위키: 포장이사의 정의와 일반적인 절차</a></li>
+                        <li><a href="https://www.gov.kr/main?a=AA020InfoCapForm&m=c5d0e7047f3b8f10a260849319808a3d" target="_blank" rel="nofollow noopener">정부24: 이사 후 전입신고, 확정일자 받는 방법 안내</a></li>
+                        <li><a href="https://www.kotsa.or.kr/main.do" target="_blank" rel="nofollow noopener">한국교통안전공단: 화물자동차 운송사업(이사업체) 관련 정보</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function calculateCostAndChecklist() {
+            const areaSize = document.getElementById('area_size').value;
+            const distance = document.getElementById('distance').value;
+            const packingType = document.getElementById('packing_type').value;
+            const moveMonth = document.getElementById('move_month').value;
+            const output = document.getElementById('result_output');
+
+            if (!areaSize || !distance || !packingType || !moveMonth) {
+                output.innerHTML = "<p style='color: #d32f2f; font-weight: bold;'>이사 평수, 거리, 이사 유형, 희망 월을 모두 입력해주세요.</p>";
+                return;
+            }
+
+            // 대략적인 기본 비용 산정 (단순화된 시뮬레이션)
+            let baseCost = 0;
+            if (areaSize <= 25) baseCost = 150; // 원룸/소형
+            else if (areaSize <= 40) baseCost = 250; // 중형
+            else baseCost = 350; // 대형 (단위: 만원)
+
+            // 이사 유형별 가중치
+            if (packingType === '반포장이사') baseCost *= 0.8;
+            else if (packingType === '일반이사') baseCost *= 0.6;
+
+            // 거리 가중치 (구미 외 지역 이사 시)
+            if (distance > 30) baseCost += (distance / 10) * 10; // 장거리 추가 비용
+
+            // 성수기 가중치 (3월, 5월, 10월)
+            if (['3', '5', '10'].includes(moveMonth)) baseCost *= 1.1;
+
+            const minCost = Math.round(baseCost * 0.95);
+            const maxCost = Math.round(baseCost * 1.05);
+
+            // 결과 표시
+            output.innerHTML = `
+                <h4>📌 시뮬레이션 결과 (2026년 예상)</h4>
+                <p><strong>예상 이사 유형:</strong> ${packingType} (${areaSize}평/톤)</p>
+                <p><strong>예상 비용 범위:</strong> <strong>${minCost}만원 ~ ${maxCost}만원</strong></p>
+                <p style="font-size: 0.9em; color: #666;">*이 비용은 참고용이며, 정확한 비용은 **구미이사업체** 방문 견적을 통해 확인하세요.</p>
+                
+                <h4>📅 맞춤형 이사 체크리스트</h4>
+                <ul style="list-style-type: square;">
+                    <li>**필수:** 계약한 ${packingType} 범위 확인 및 특약 사항 검토.</li>
+                    <li>**행정:** 이사 1주 전 전입/전출 신고 및 우편물 주소 변경 완료.</li>
+                    <li>**정리:** 이사 당일 고가품/귀중품 분리 보관 (업체 운반 제외).</li>
+                    <li>**${packingType === '반포장이사' || packingType === '일반이사' ? '고객 담당: 남은 짐 포장 및 새 집 정리 공간 확보.' : '고객 담당: 정리 기준에 대한 명확한 요청 사항 전달.'}**</li>
+                </ul>
+            `;
+        }
+    </script>
+</body>
+  
